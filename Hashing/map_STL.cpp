@@ -2,6 +2,7 @@
 #include<map>
 #include<unordered_map>
 
+using namespace std;
 int main()
 {
     int arr[]={1,1,1,6,4,3};
