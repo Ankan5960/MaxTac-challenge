@@ -80,5 +80,5 @@ int main()
 {
     Solution sol;
     vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    cout << sol.maxSum_optimal(nums);
+    cout << sol.maxSum_optimal_with_subarray(nums);
 }
