@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-    int arr[]={1,1,1,6,4,3};
+    int arr[]={2 ,3 ,2 ,3 ,5};
     int n=sizeof(arr)/sizeof(int);
     std::map<int,int> OrderMap;
     std::unordered_map<int,int> UnorderMap;
@@ -18,7 +18,12 @@ int main()
     std::cout<<"Key\t"<<"Value\t"<<std::endl;
     for(auto it:OrderMap)
         std::cout<<it.first<<"\t"<<it.second<<"\t"<<std::endl;
-
+        
+    cout<<"Access without second "<<endl;
+    for(int i=1;i<=OrderMap.size();i++){
+        cout<<OrderMap[i]<<" ";
+    }
+    cout<<endl;
     std::cout<<"unordered map"<<std::endl;
     std::cout<<"Key\t"<<"Value\t"<<std::endl;
     for(auto it:UnorderMap)
