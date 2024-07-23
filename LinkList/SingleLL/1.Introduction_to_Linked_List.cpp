@@ -1,53 +1,24 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "0.header.cpp"
 
-class Node
+Node *SingleLL::constructLL(vector<int> &arr)
 {
-public:
-    int data;
-    Node *next;
-    Node()
+    if (!head)
     {
-        data = 0;
-        next = NULL;
+        head = new Node(arr[0]);
     }
-    Node(int data)
+    Node *temp = head;
+    for (int i = 1; i < arr.size(); i++)
     {
-        this->data = data;
-        this->next = NULL;
+        temp->next = new Node(arr[i]);
+        temp = temp->next;
     }
-};
-
-class Solution
-{
-    Node *head;
-
-public:
-    Solution()
-    {
-        head = nullptr;
-    }
-    Node *constructLL(vector<int> &arr)
-    {
-        // code here
-        if (!head)
-        {
-            head = new Node(arr[0]);
-        }
-        Node *temp=head;
-        for(int i=1;i<arr.size();i++)
-        {
-            temp->next=new Node(arr[i]);
-            temp=temp->next;
-        }
-        return head;
-    }
-};
+    return head;
+}
 
 int main()
 {
-    vector<int> arr = {1,2,3,4,5};
-    Solution obj;
+    vector<int> arr = {1, 2, 3, 4, 5};
+    SingleLL obj;
     Node *ans = obj.constructLL(arr);
     while (ans)
     {

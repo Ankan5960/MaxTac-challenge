@@ -1,55 +1,29 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "0.header.cpp"
 
-struct Node {
-    int data;
-    struct Node* next;
-
-    Node()
+Node *SingleLL::insertAtEnd(Node *head, int x)
+{
+    Node *mainHead = head;
+    if (!head)
     {
-        data=0;
-        next=NULL;
+        head = new Node(x);
+        return head;
     }
-    Node(int x) {
-        data = x;
-        next = NULL;
+    while (head->next)
+    {
+        head = head->next;
     }
-};
-
-void printList(Node* node) {
-    while (node != NULL) {
-        cout << node->data << " ";
-        node = node->next;
-    }
-    cout << "\n";
+    head->next = new Node(x);
+    return mainHead;
 }
 
-class Solution {
-  public:
-    Node *insertAtEnd(Node *head, int x) {
-        // Code here
-        Node *mainHead=head;
-        if(!head)
-        {
-            head=new Node(x);
-            return head;
-        }
-        while(head->next)
-        {
-            head=head->next;
-        }
-        head->next=new Node(x);
-        return mainHead;
-    }
-};
-
-int main() {
-    Solution obj;
-    Node* head=nullptr;
-    for(int i=0;i<5;i++)
+int main()
+{
+    SingleLL obj;
+    Node *head = nullptr;
+    for (int i = 0; i < 5; i++)
     {
-        Node* ans=obj.insertAtEnd(head,2);
-        head=ans;
+        Node *ans = obj.insertAtEnd(head, 2);
+        head = ans;
     }
     while (head)
     {
