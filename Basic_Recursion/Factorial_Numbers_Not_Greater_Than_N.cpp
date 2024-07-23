@@ -3,6 +3,7 @@
 #include<iostream>
 #include<vector>
 
+using namespace std;
 long long factorial(long long n)
 {
     if(n==0 || n==1)
